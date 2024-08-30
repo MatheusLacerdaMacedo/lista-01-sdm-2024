@@ -1,19 +1,25 @@
-import java.util.Scanner;
-
 public class Pessoa {
-    private String nome;
-    private String sobrenome;
+    public String nome;
+    public String endereco; 
+   public String cpf;
+    public  String rg;
+    public String nasc;
 
-    public Pessoa() {
-        this.nome = "";
-        this.sobrenome = "";
-    }
-
-    public Pessoa(String nome, String sobrenome) {
+    
+    public Pessoa(String nome, String endereco, String cpf, String rg, String nasc) {
         this.nome = nome;
-        this.sobrenome = sobrenome;
+        this.endereco = endereco;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.nasc = nasc;
     }
 
+    
+    public Pessoa() {
+        
+    }
+
+    
     public String getNome() {
         return nome;
     }
@@ -22,31 +28,44 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    public String getNomeCompleto() {
-        return nome + " " + sobrenome;
+    public String getCpf() {
+        return cpf;
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-        System.out.println("Informe seu nome:");
-        String nome = scanner.nextLine();
+    public String getRg() {
+        return rg;
+    }
 
-        System.out.println("Informe seu sobrenome:");
-        String sobrenome = scanner.nextLine();
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
 
-        Pessoa pessoa = new Pessoa(nome, sobrenome);
-        
-        System.out.println("Nome completo: " + pessoa.getNomeCompleto());
-        
-        scanner.close();
+    public String getNasc() {
+        return nasc;
+    }
+
+    public void setNasc(String nasc) {
+        this.nasc = nasc;
+    }
+
+   
+    public void pessoaInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("CPF: " + cpf);
+        System.out.println("RG: " + rg);
+        System.out.println("Data de Nascimento: " + nasc);
     }
 }
